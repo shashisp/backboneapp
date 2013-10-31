@@ -9,7 +9,37 @@
 
 	<script type="text/javascript">
 
+      Person = Backbone.Model.extend({
+      		initialize: function(){
+      			console.log('obeject is create :P')
 
+      			this.on("change", function () {
+      				alert("Attribute value has been changed");
+      			});
+      		},
+      	
+
+      		 defaults: {
+      		 	name: "shashi",
+      		 	age: "21"
+      		 },
+
+      		 getName: function(){
+      		 	console.log("name is :" + this.get('name'));
+      		 }
+
+      
+      	});
+
+        var steve = new Person();
+        steve.getName(); 
+        //console.log(steve.get('name'));
+        //console.log(steve.get('age'));
+        steve.set({name:"shyam"});
+
+        var shashi = new Person({name:"shashi", age:"20"});
+        //console.log(shashi.get('name'));
+        //console.log(shashi.get('age'));
 
 	</script>
 
